@@ -16,21 +16,6 @@
       ],
       "files": [
         {
-          "path": "src/components/obsidian/DynamicTab.tsx",
-          "type": "registry:ui",
-          "target": "components/obsidian/DynamicTab.tsx"
-        },
-        {
-          "path": "src/components/obsidian/ObsidianDataContext.tsx",
-          "type": "registry:ui",
-          "target": "components/obsidian/ObsidianDataContext.tsx"
-        },
-        {
-          "path": "src/components/obsidian/UIStateProvider.tsx",
-          "type": "registry:ui",
-          "target": "components/obsidian/UIStateProvider.tsx"
-        },
-        {
           "path": "src/components/obsidian/Window.tsx",
           "type": "registry:ui",
           "target": "components/obsidian/Window.tsx"
@@ -124,6 +109,26 @@
           "path": "src/components/obsidian/elements/WarningBox.tsx",
           "type": "registry:ui",
           "target": "components/obsidian/elements/WarningBox.tsx"
+        },
+        {
+          "path": "src/components/obsidian/providers/ObsidianDataProvider.tsx",
+          "type": "registry:ui",
+          "target": "components/obsidian/providers/ObsidianDataProvider.tsx"
+        },
+        {
+          "path": "src/components/obsidian/providers/UIStateProvider.tsx",
+          "type": "registry:ui",
+          "target": "components/obsidian/providers/UIStateProvider.tsx"
+        },
+        {
+          "path": "src/components/obsidian/ui/DynamicTab.tsx",
+          "type": "registry:ui",
+          "target": "components/obsidian/ui/DynamicTab.tsx"
+        },
+        {
+          "path": "src/components/obsidian/ui/ObsidianRadixTabs.tsx",
+          "type": "registry:ui",
+          "target": "components/obsidian/ui/ObsidianRadixTabs.tsx"
         },
         {
           "path": "src/components/obsidian/elements/addons/AddonContainer.tsx",
