@@ -128,12 +128,14 @@ export default function Label({
   children,
   className,
   style,
+  doesWrap = true,
 }: {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
+  doesWrap?: boolean;
 }) {
-  const finalClassName = cn("text-left block text-white text-sm", className);
+  const finalClassName = cn("text-left block text-white text-xs", className, doesWrap ? "" : "whitespace-nowrap");
   const [sanitized, setSanitized] = useState<string | TrustedHTML>("");
 
   useEffect(() => {
@@ -147,9 +149,7 @@ export default function Label({
       return;
     };
 
-    const htmlUnsafe = robloxRichTextToHtml(children);
     const DOMPurify = createDOMPurify(window as unknown as import("dompurify").WindowLike);
-
     setSanitized(
       DOMPurify.sanitize(robloxRichTextToHtml(String(children)), {
         ALLOWED_TAGS: ["b", "i", "u", "s", "br", "span"],

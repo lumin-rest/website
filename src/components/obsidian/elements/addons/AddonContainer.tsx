@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 export default function AddonContainer({
@@ -8,10 +9,8 @@ export default function AddonContainer({
   className?: string;
 }) {
   return (
-    <div className={className}>
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 flex gap-1 items-center pointer-events-auto z-40">
-        {children}
-      </div>
+    <div className={cn("absolute right-0 top-1/2 -translate-y-1/2 flex flex-row items-center space-x-1 shrink-0 z-40", className)}>
+      {children}
     </div>
   );
 }

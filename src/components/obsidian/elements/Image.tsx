@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useCornerRadius } from "../ObsidianDataContext";
 
 export default function ObsidianImage({
 	image,
@@ -17,13 +18,14 @@ export default function ObsidianImage({
 	height: number;
 	rectSize: { y: number; x: number };
 }) {
+	const br = useCornerRadius();
 	return (
 		<div
-			className={"w-full rounded-[1px] bg-[rgb(25,25,25)] border-[rgb(40,40,40)] border flex items-center justify-center"}
-			style={{ height: `${height}px` }}
+			className={"w-full bg-[rgb(25,25,25)] border-[rgb(40,40,40)] border flex items-center justify-center"}
+			style={{ height: `${height}px`, borderRadius: br }}
 		>
-			<p className="text-center text-muted-foreground text-sm select-none">
-				Image Unavailable
+			<p className="text-center text-muted-foreground text-xs select-none">
+				Unavailable
 			</p>
 		</div>
 	);
