@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "3008",
     "room & doors",
     "r&d",
-    "pressure",
+    // "pressure",
     "fisch",
     "babft",
   ],

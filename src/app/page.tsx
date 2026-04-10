@@ -42,21 +42,21 @@ export const dynamic = "force-static";
 export default async function Home() {
   const guildPromise = fetch(
     "https://discord.com/api/v9/invites/mspaint?with_counts=true&with_expiration=true",
-    { cache: "force-cache", next: { revalidate: 300 } }
+    { cache: "force-cache", next: { revalidate: 300 } },
   )
     .then((response) => response.json())
     .catch(() => ({ approximate_member_count: 20000 }));
 
   const languagesPromise = fetch(
     "https://raw.githubusercontent.com/mspaint-cc/translations/refs/heads/main/Languages.json",
-    { cache: "force-cache", next: { revalidate: 300 } }
+    { cache: "force-cache", next: { revalidate: 300 } },
   )
     .then((response) => response.json())
     .catch(() => ({ en: {} }));
 
   const gameStatusPromise = fetch(
     "https://raw.githubusercontent.com/mspaint-cc/assets/refs/heads/main/status.json",
-    { cache: "force-cache", next: { revalidate: 60 } }
+    { cache: "force-cache", next: { revalidate: 60 } },
   )
     .then((response) => response.json())
     .catch(() => ({}));
@@ -120,7 +120,7 @@ export default async function Home() {
           cr={1}
           className={cn(
             "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] -z-50",
-            "group-aria-hidden:hidden"
+            "group-aria-hidden:hidden",
           )}
         />
 
@@ -133,7 +133,7 @@ export default async function Home() {
                     <div className="flex mb-2">
                       <div
                         className={cn(
-                          "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+                          "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
                         )}
                       >
                         <DynamicShopButton />
@@ -309,13 +309,13 @@ export default async function Home() {
                 gamesStatusData={gamesStatusData}
               />
 
-              <GameCard
+              {/* <GameCard
                 title={"Pressure"}
                 mappingName={"Pressure - Pressure"}
                 image={`https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAsH0LmZ6Layj1tLCfgrzV73ZonhEDeNGAiRdxQ`}
                 placeId={12411473842}
                 gamesStatusData={gamesStatusData}
-              />
+              /> */}
 
               <GameCard
                 title={"3008"}
@@ -551,13 +551,12 @@ export default async function Home() {
                   href={"https://shop.mspaint.cc/"}
                 >
                   shop
-                </Link> or buy going through the{" "}
-                <Link
-                  className="text-white-500 underline"
-                  href={"/key"}
-                >
+                </Link>{" "}
+                or buy going through the{" "}
+                <Link className="text-white-500 underline" href={"/key"}>
                   key system
-                </Link>.
+                </Link>
+                .
               </AccordionContent>
             </AccordionItem>
 
@@ -566,12 +565,14 @@ export default async function Home() {
                 Where can I report bugs and suggest features?
               </AccordionTrigger>
               <AccordionContent>
-                You can report bugs and suggest features in the <Link
+                You can report bugs and suggest features in the{" "}
+                <Link
                   className="text-white-500 underline"
                   href={"/subscription-dashboard"}
                 >
                   Dashboard
-                </Link>.
+                </Link>
+                .
               </AccordionContent>
             </AccordionItem>
 

@@ -2,7 +2,7 @@ export const gamesList = [
   "DOORS",
   "3008",
   "Rooms & Doors",
-  "Pressure",
+  // "Pressure",
   "Fisch",
   "BABFT",
   "Grace",
@@ -11,5 +11,5 @@ export const gamesList = [
   "Notoriety",
   "Dead Rails",
   "99 Nights In The Forest",
-  "The Forge"
+  "The Forge",
 ];

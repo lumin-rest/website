@@ -24,7 +24,7 @@ function SetupGameMapping(
     | {
         [key: string]: Mapping;
       }
-    | Mapping
+    | Mapping,
 ) {
   const IsSingleGame = "Game" in data;
 
@@ -106,32 +106,32 @@ export const MenuMapping = {
     DataURL: GetUIDataURL("R&D"),
   }),
 
-  ...SetupGameMapping("Pressure", {
-    Pressure: {
-      Game: "Pressure",
-      DataURL: GetUIDataURL("pressure/main"),
-    },
+  // ...SetupGameMapping("Pressure", {
+  //   Pressure: {
+  //     Game: "Pressure",
+  //     DataURL: GetUIDataURL("pressure/main"),
+  //   },
 
-    Raveyard: {
-      Game: "Pressure",
-      DataURL: GetUIDataURL("pressure/raveyard"),
-    },
+  //   Raveyard: {
+  //     Game: "Pressure",
+  //     DataURL: GetUIDataURL("pressure/raveyard"),
+  //   },
 
-    "The Hunted": {
-      Game: "Pressure",
-      DataURL: GetUIDataURL("pressure/hunted"),
-    },
+  //   "The Hunted": {
+  //     Game: "Pressure",
+  //     DataURL: GetUIDataURL("pressure/hunted"),
+  //   },
 
-    "Three Nights at the Blacksite": {
-      Game: "Pressure (Three Nights at the Blacksite)",
-      DataURL: GetUIDataURL("pressure/threenightsatblacksite"),
-    },
+  //   "Three Nights at the Blacksite": {
+  //     Game: "Pressure (Three Nights at the Blacksite)",
+  //     DataURL: GetUIDataURL("pressure/threenightsatblacksite"),
+  //   },
 
-    Lobby: {
-      Game: "Pressure (Lobby)",
-      DataURL: GetUIDataURL("pressure/lobby"),
-    },
-  }),
+  //   Lobby: {
+  //     Game: "Pressure (Lobby)",
+  //     DataURL: GetUIDataURL("pressure/lobby"),
+  //   },
+  // }),
 
   ...SetupGameMapping("3008", {
     Game: "3008",
