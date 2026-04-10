@@ -47,8 +47,8 @@ export default function ToggleSwitch({
   checked: boolean;
   risky: boolean;
   stateKey?: string;
-  addonData: [UIElement, Addons[] | undefined, string | undefined];
-  renderAddons: (element: UIElement, addons?: Addons[], stateKeyPrefix?: string, node?: React.ReactNode) => React.ReactNode;
+  addonData?: [UIElement, Addons[] | undefined, string | undefined];
+  renderAddons?: (element: UIElement, addons?: Addons[], stateKeyPrefix?: string, node?: React.ReactNode) => React.ReactNode;
 }) {
   const [externalChecked, setExternalChecked] = useUIValue<boolean | undefined>(
     stateKey,
@@ -71,7 +71,7 @@ export default function ToggleSwitch({
   }, [externalChecked, stateKey]);
 
   const uiElement = addonData && addonData[0];
-  const addons = addonData && addonData[1];
+  const addons = addonData && renderAddons && addonData[1];
   const stateKeyPrefix = addonData && addonData[2];
 
   return (<div>
@@ -92,6 +92,6 @@ export default function ToggleSwitch({
       {addons && addons.length === 0 && <Switch isChecked={isChecked} onClick={toggle} />}
     </div>
 
-    {addons && addons.length > 0 && renderAddons(uiElement, addons, stateKeyPrefix, <Switch isChecked={isChecked} onClick={toggle} />)}
+    {addons && addons.length > 0 && renderAddons(uiElement as UIElement, addons, stateKeyPrefix, <Switch isChecked={isChecked} onClick={toggle} />)}
   </div>);
 }
