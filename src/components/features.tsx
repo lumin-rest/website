@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/popover";
 
 import { LatestBuild, MenuMapping } from "@/data/features";
-import { useResetUIState, useUIState } from "./obsidian/UIStateProvider";
+import { useResetUIState, useUIState } from "./obsidian/providers/UIStateProvider";
 
 export function GameSelection({
   value,

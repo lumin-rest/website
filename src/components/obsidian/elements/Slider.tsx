@@ -4,8 +4,8 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { ButtonBase } from "./Button";
 import Label from "./Label";
-import { useUIValue } from "../UIStateProvider";
-import { useCornerRadius } from "../ObsidianDataContext";
+import { useUIValue } from "../providers/UIStateProvider";
+import { useCornerRadius } from "../providers/ObsidianDataProvider";
 
 export default function Slider({
   text,

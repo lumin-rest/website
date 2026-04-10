@@ -2,9 +2,9 @@
 
 import { CheckIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useUIValue } from "../../UIStateProvider";
+import { useUIValue } from "../../providers/UIStateProvider";
 import Label from "../Label";
-import { useCornerRadius } from "../../ObsidianDataContext";
+import { useCornerRadius } from "../../providers/ObsidianDataProvider";
 
 export default function ToggleCheckbox({
   text,

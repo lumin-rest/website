@@ -3,7 +3,7 @@
 import React from "react";
 import { ChevronUp } from "lucide-react";
 import { createPortal } from "react-dom";
-import { useUIValue } from "../UIStateProvider";
+import { useUIValue } from "../providers/UIStateProvider";
 import { ButtonBase } from "./Button";
 import Label from "./Label";
 import { cn } from "@/lib/utils";

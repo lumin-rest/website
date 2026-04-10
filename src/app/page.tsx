@@ -35,7 +35,7 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "@/components/magicui/scroll-based-velocity";
-import { UIStateProvider } from "@/components/obsidian/UIStateProvider";
+import { UIStateProvider } from "@/components/obsidian/providers/UIStateProvider";
 
 export const dynamic = "force-static";
 
@@ -257,9 +257,8 @@ export default async function Home() {
           >
             <WordFadeIn
               className="text-3xl md:text-3xl"
-              words={`mspaint officially supports ${
-                Object.keys(gamesList).length
-              } games`}
+              words={`mspaint officially supports ${Object.keys(gamesList).length
+                } games`}
               inView
             />
             <BlurFade className="mb-[15px]" delay={0.2 + 1 * 0.05} inView>
@@ -391,9 +390,8 @@ export default async function Home() {
         <div className="flex flex-col items-center text-center py-28">
           <WordFadeIn
             className="text-3xl md:text-3xl"
-            words={`mspaint is translated in ${
-              Object.keys(languageData).length - 1
-            } languages`}
+            words={`mspaint is translated in ${Object.keys(languageData).length - 1
+              } languages`}
             inView
           />
           <BlurFade delay={0.2 + 1 * 0.05} inView>

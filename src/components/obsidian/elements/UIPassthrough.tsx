@@ -1,4 +1,4 @@
-import { useCornerRadius } from "../ObsidianDataContext";
+import { useCornerRadius } from "../providers/ObsidianDataProvider";
 
 export default function ObsidianUIPassthrough({
 	height = 24,

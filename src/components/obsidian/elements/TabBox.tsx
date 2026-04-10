@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { ElementParser } from "../DynamicTab";
 import { TabboxTab } from "../element.types";
-import { useCornerRadius } from "../ObsidianDataContext";
+import { useCornerRadius } from "../providers/ObsidianDataProvider";
 
 export default function Tabbox({
   tabs,

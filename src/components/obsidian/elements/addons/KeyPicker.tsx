@@ -3,8 +3,8 @@
 import { cn } from "@/lib/utils";
 import Label from "../Label";
 import { useEffect, useState, useMemo } from "react";
-import { useUIState } from "../../UIStateProvider";
-import { useCornerRadius } from "../../ObsidianDataContext";
+import { useUIState } from "../../providers/UIStateProvider";
+import { useCornerRadius } from "../../providers/ObsidianDataProvider";
 
 export default function KeyPicker({
   defaultValue,

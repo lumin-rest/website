@@ -3,7 +3,7 @@
 import ToggleSwitch from "./toggle/Switch";
 import ToggleCheckbox from "./toggle/Checkbox";
 import { Addons, UIElement } from "../element.types";
-import { useForceCheckbox } from "../ObsidianDataContext";
+import { useForceCheckbox } from "../providers/ObsidianDataProvider";
 
 export default function Toggle({
   text,

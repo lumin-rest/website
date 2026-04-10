@@ -1,8 +1,8 @@
 import React from "react";
 import { ButtonBase } from "./Button";
 import Label from "./Label";
-import { useUIState } from "../UIStateProvider";
-import { useCornerRadius } from "../ObsidianDataContext";
+import { useUIState } from "../providers/UIStateProvider";
+import { useCornerRadius } from "../providers/ObsidianDataProvider";
 import { cn } from "@/lib/utils";
 
 export default function Input({

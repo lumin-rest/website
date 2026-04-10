@@ -5,10 +5,10 @@ import { Card, CardHeader } from "./ui/card";
 import { CircleMinus, CircleCheck, CircleAlert, BanIcon } from "lucide-react";
 import Image from "next/image";
 
-import { useUIState } from "./obsidian/UIStateProvider";
+import { useUIState } from "./obsidian/providers/UIStateProvider";
 import { MenuMapping } from "@/data/features";
 
-const FadeText = ({ children, width }: { children:  React.ReactNode, width: number }) => (
+const FadeText = ({ children, width }: { children: React.ReactNode, width: number }) => (
   <div
     style={{
       width,
@@ -24,17 +24,17 @@ const FadeText = ({ children, width }: { children:  React.ReactNode, width: numb
   </div>
 );
 
-export default function GameCard({ 
+export default function GameCard({
   title,
   mappingName,
-  image, 
+  image,
   placeId,
-  status, 
-  issues, 
-  gamesStatusData 
+  status,
+  issues,
+  gamesStatusData
 }: { title: string, mappingName: string, image: string, placeId: number | undefined, status?: boolean, issues?: boolean, gamesStatusData: { [key: string]: string } }) {
   const uiState = useUIState();
-  
+
   // handle icon //
   let statusEmoji = title in gamesStatusData ? gamesStatusData[title] : "🟢";
   const isRemoteImage = image.startsWith("http://") || image.startsWith("https://");
@@ -42,7 +42,7 @@ export default function GameCard({
     statusEmoji = "🔴";
   } else if (status == true) {
     if (issues == true) statusEmoji = "🟡";
-    else                statusEmoji = "🟢";
+    else statusEmoji = "🟢";
   }
 
   // handle status icon elemenet //
@@ -59,7 +59,7 @@ export default function GameCard({
     case "❌":
       statusIcon = <BanIcon className="text-red-500" />
       break;
-    
+
     default:
       break;
   }
@@ -67,8 +67,8 @@ export default function GameCard({
   return (
     <Card className="w-72 bg-zinc-900 text-white overflow-hidden">
       <div className="h-40 w-full overflow-hidden">
-        <Image 
-          src={image} 
+        <Image
+          src={image}
           alt={title}
           width={0} height={0} sizes={"100vw"}
           className="w-full h-full object-cover cursor-pointer"
@@ -77,13 +77,13 @@ export default function GameCard({
           onClick={(e) => {
             e.preventDefault();
             uiState.setGame(mappingName);
-            
+
             const el = document.getElementById("features")
             if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: "smooth" });
           }}
         />
       </div>
-      
+
       <CardHeader className="p-4 flex flex-row items-center justify-between space-y-0">
         <FadeText width={255}>
           <a

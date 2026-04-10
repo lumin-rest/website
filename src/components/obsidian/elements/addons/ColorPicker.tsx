@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { createPortal } from "react-dom";
 import { Color3 } from "../../element.types";
-import { useUIState } from "../../UIStateProvider";
+import { useUIState } from "../../providers/UIStateProvider";
 import Input from "../Input";
 import Label from "../Label";
-import { useCornerRadius } from "../../ObsidianDataContext";
+import { useCornerRadius } from "../../providers/ObsidianDataProvider";
 
 // color conversion utils //
 const colorUtils = {

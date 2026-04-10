@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import * as React from "react";
 import type { ReactNode } from "react";
-import { useCornerRadius } from "../ObsidianDataContext";
+import { useCornerRadius } from "../providers/ObsidianDataProvider";
 
 export const ButtonBase = React.forwardRef<
 	HTMLButtonElement,

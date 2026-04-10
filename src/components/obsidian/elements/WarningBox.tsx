@@ -1,5 +1,5 @@
 import Label from "./Label";
-import { useCornerRadius } from "../ObsidianDataContext";
+import { useCornerRadius } from "../providers/ObsidianDataProvider";
 
 const ColorScheme = {
   ["Warning"]: {

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { MoveDiagonal2, Move, Search } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/ObsidianRadixTabs";
 import React, { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
-import { TabParser } from "./DynamicTab";
+import { TabParser } from "./ui/DynamicTab";
 import { UIData } from "./element.types";
 import { IBMMono } from "./fonts";
-import { ObsidianDataProvider } from "./ObsidianDataContext";
+import { ObsidianDataProvider } from "./providers/ObsidianDataProvider";
 import Label from "./elements/Label";
 
 import * as LucideIcons from "lucide-react";

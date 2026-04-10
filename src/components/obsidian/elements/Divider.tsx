@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { useCornerRadius } from "../ObsidianDataContext";
+import { useCornerRadius } from "../providers/ObsidianDataProvider";
 
 export default function Divider({
   text,

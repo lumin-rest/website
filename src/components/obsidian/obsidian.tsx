@@ -12,7 +12,7 @@ import type {
   Vector2,
   TabboxData,
 } from "./element.types";
-import { UIStateProvider } from "./UIStateProvider";
+import { UIStateProvider } from "./providers/UIStateProvider";
 import { ObsidianWindow } from "./Window";
 
 // Root wrapper props

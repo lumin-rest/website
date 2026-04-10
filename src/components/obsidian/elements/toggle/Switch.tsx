@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useUIValue } from "../../UIStateProvider";
+import { useUIValue } from "../../providers/UIStateProvider";
 import Label from "../Label";
 import { Addons, UIElement } from "../../element.types";
 
