@@ -1,6 +1,6 @@
 {
-    "name": "mspaint dashboard",
-    "short_name": "mspaint",
+    "name": "lumin.rest dashboard",
+    "short_name": "lumin.rest",
     "icons": [
       {
         "src": "/icon.png",

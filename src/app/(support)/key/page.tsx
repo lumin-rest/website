@@ -1,14 +1,28 @@
 "use client";
 
-//import { redirect } from "next/navigation"
-
 import { BlurFade } from "@/components/magicui/blur-fade";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { Button } from "@/components/ui/button";
-import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
+import { CheckIcon, ExternalLinkIcon } from "lucide-react";
+
+function Perk({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-2 text-sm">
+      <CheckIcon className="h-4 w-4 mt-0.5 shrink-0 text-[#f8bfd4]" />
+      <span>{children}</span>
+    </li>
+  );
+}
 
 export default function Page() {
   return (
@@ -24,70 +38,85 @@ export default function Page() {
         )}
       />
 
-      <div className="min-h-screen w-full flex items-center justify-center">
-        <div className="flex items-center justify-center">
-          <BlurFade delay={0.2 + 1 * 0.05} inView>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center max-md:text-center">
-                  <span className="self-center">Key System</span>
-                </CardTitle>
-              </CardHeader>
-
-              <CardFooter className="flex px-5 gap-2 mb-[-5px] max-md:flex-col max-md:px-10">
-                {/*<Link
-                  href={
-                    "https://ads.luarmor.net/get_key?for=mspaint_key_linkvertise-CwcwpnwnQoLj"
-                  }
-                  className="max-md:w-full"
-                >
-                  <Button className="cursor-pointer max-md:w-full">
-                    Linkvertise{" "}
-                    <Image
-                      className="ml-2"
-                      src="/icons/linkvertise.png"
-                      width={25}
-                      height={25}
-                      alt="Linkvertise"
-                    />
-                  </Button>
-                </Link>*/}
-
-                <Link
-                  href={
-                    "https://ads.luarmor.net/get_key?for=mspaint_key_linkvertise-GmscbiEaJINm"
-                  }
-                  className="max-md:w-full"
-                >
-                  <Button className="cursor-pointer max-md:w-full">
-                    Linkvertise{" "}
-                    <Image
-                      className="ml-2"
-                      src="/icons/linkvertise.png"
-                      width={25}
-                      height={25}
-                      alt="Linkvertise"
-                    />
-                  </Button>
-                </Link>
-              </CardFooter>
-
-              <div className="text-center text-sm text-muted-foreground mb-3">
-                <Link
-                  href={"https://docs.mspaint.cc/key-system"}
-                  className="transition duration-200 border-b-1 border-transparent hover:border-white hover:text-white"
-                >
-                  User Guide
-                </Link>
-              </div>
-            </Card>
+      <div className="min-h-screen w-full flex items-center justify-center px-4">
+        <div className="flex flex-col items-center gap-6">
+          <BlurFade delay={0.15} inView>
+            <div className="text-center mb-2">
+              <h1 className="text-2xl font-bold">Key System</h1>
+              <p className="text-muted-foreground text-sm mt-1">
+                Choose how you want to access lumin.rest
+              </p>
+            </div>
           </BlurFade>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            {/* Free Key Card */}
+            <BlurFade delay={0.25} inView>
+              <Card className="w-[300px] flex flex-col">
+                <CardHeader>
+                  <CardTitle>Free Key</CardTitle>
+                  <CardDescription>Temporary access via key system</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <ul className="space-y-2">
+                    <Perk>7 hour access to lumin.rest</Perk>
+                    <Perk>All supported games</Perk>
+                    <Perk>No payment required</Perk>
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Link
+                    href="https://ads.luarmor.net/get_key?for=Lumin_Key-TwwkQkvyGEEn"
+                    target="_blank"
+                    className="w-full"
+                  >
+                    <Button variant="outline" className="w-full cursor-pointer">
+                      Get Free Key
+                      <ExternalLinkIcon className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            </BlurFade>
+
+            {/* Lifetime Card */}
+            <BlurFade delay={0.35} inView>
+              <Card className="w-[300px] flex flex-col border-[#f8bfd4]/30">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    Lifetime
+                    <span className="text-xs font-medium bg-[#f8bfd4]/15 text-[#f8bfd4] px-2 py-0.5 rounded-full">
+                      Recommended
+                    </span>
+                  </CardTitle>
+                  <CardDescription>Permanent access, one-time purchase</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <ul className="space-y-2">
+                    <Perk>Permanent access to lumin.rest</Perk>
+                    <Perk>All supported games</Perk>
+                    <Perk>No key system required</Perk>
+                    <Perk>Priority support</Perk>
+                    <Perk>Early access to new features</Perk>
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Link
+                    href="https://luminrest.mysellauth.com/product/lifetime"
+                    target="_blank"
+                    className="w-full"
+                  >
+                    <Button className="w-full cursor-pointer">
+                      Buy Lifetime
+                      <ExternalLinkIcon className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            </BlurFade>
+          </div>
         </div>
       </div>
     </main>
   );
-
-  /*return redirect(
-    "https://blog.mspaint.cc/mspaint-transitioning-subscription-model"
-  );*/
 }

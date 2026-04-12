@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronsUpDown } from "lucide-react";
-import { Obsidian } from "./obsidian/obsidian";
+import { MileniumWindow } from "./milenium/MileniumWindow";
 import WordFadeIn from "./ui/word-fade-in";
 import { BlurFade } from "./magicui/blur-fade";
 
@@ -22,57 +22,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { LatestBuild, MenuMapping } from "@/data/features";
-import { useResetUIState, useUIState } from "./obsidian/providers/UIStateProvider";
+import { GRACE_DATASETS } from "@/data/grace";
 
-export function GameSelection({
+export function ModeSelection({
   value,
-  setValue
+  setValue,
 }: {
   value: string;
   setValue: (value: string) => void;
 }) {
   const [open, setOpen] = React.useState(false);
-
-  const [search, setSearch] = React.useState("");
-  const filteredGroups = React.useMemo(() => {
-    const searchLc = search.toLowerCase();
-    const categories = Object.keys(MenuMapping) as Array<
-      keyof typeof MenuMapping
-    >;
-
-    return categories
-      .map((catKey) => {
-        const category = String(catKey);
-        const allGames = Object.keys(MenuMapping[catKey]) as Array<
-          keyof (typeof MenuMapping)[typeof catKey]
-        >;
-
-        const games = allGames.filter((gk) => {
-          const gameKey = String(gk);
-          const gameData = MenuMapping[catKey][gk] as { Game?: string };
-
-          return (
-            gameKey.toLowerCase().includes(searchLc) ||
-            gameData.Game?.toLowerCase().includes(searchLc)
-          );
-        }) as string[];
-
-        return { category, games };
-      })
-      .filter((g) => g.games.length > 0);
-  }, [search]);
-
-  const displayText = () => {
-    if (value.includes(" - ")) {
-      const [category, game] = value.split(" - ");
-      if (category === game) {
-        return category;
-      }
-    }
-
-    return value || "Select a game";
-  };
+  const modes = Object.keys(GRACE_DATASETS);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -81,43 +41,29 @@ export function GameSelection({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[300px] justify-between mt-5 mb-5 max-md:mt-2 max-md:mb-2 max-sm:mb-1 max-sm:mt-1"
+          className="w-[260px] justify-between mt-5 mb-5 max-md:mt-2 max-md:mb-2 max-sm:mb-1 max-sm:mt-1"
         >
-          {displayText()}
+          Grace — {value}
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="w-[300px] p-0">
+      <PopoverContent className="w-[260px] p-0">
         <Command>
-          <CommandInput
-            placeholder="Search a game..."
-            className="h-9"
-            value={search}
-            onValueChange={(val) => setSearch(val)}
-          />
           <CommandList>
-            {filteredGroups.length > 0 ? (
-              filteredGroups.map(({ category, games }) => (
-                <CommandGroup heading={category} key={category}>
-                  {games.map((gameKey) => (
-                    <CommandItem
-                      key={gameKey}
-                      onSelect={() => {
-                        const fullValue = `${category} - ${gameKey}`;
-                        setValue(fullValue);
-                        setOpen(false);
-                        setSearch("");
-                      }}
-                    >
-                      {gameKey}
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              ))
-            ) : (
-              <CommandEmpty>No game found.</CommandEmpty>
-            )}
+            <CommandGroup heading="Grace">
+              {modes.map((mode) => (
+                <CommandItem
+                  key={mode}
+                  onSelect={() => {
+                    setValue(mode);
+                    setOpen(false);
+                  }}
+                >
+                  {mode}
+                </CommandItem>
+              ))}
+            </CommandGroup>
           </CommandList>
         </Command>
       </PopoverContent>
@@ -126,40 +72,14 @@ export function GameSelection({
 }
 
 export function Features() {
-  const [uiData, setUIData] = React.useState(undefined);
+  const [mode, setMode] = React.useState<string>("In-Game (Normal)");
+  const config = GRACE_DATASETS[mode] ?? GRACE_DATASETS["In-Game (Normal)"];
 
-  const { game, setGame, footerGame, setFooterGame } = useUIState();
-  const refresh = useResetUIState();
-
-  const memoizedObsidian = React.useMemo(() => {
-    return (
-      <Obsidian
-        title={"mspaint v4"}
-        icon={"/icon.png"}
-        footer={`Game: ${footerGame} | Build: ${LatestBuild}`}
-        uiData={uiData}
-      />
-    );
-  }, [uiData, footerGame]);
-
-  React.useEffect(() => {
-    const category = game.split(" - ")[0] as keyof typeof MenuMapping;
-    const gameName = game.split(
-      " - "
-    )[1] as keyof (typeof MenuMapping)[typeof category];
-    const gameData = MenuMapping[category][gameName];
-
-    const dataURL = (gameData as { DataURL: string }).DataURL;
-    if (!dataURL) return;
-
-    fetch(dataURL)
-      .then((res) => res.json())
-      .then((data) => {
-        setUIData(data);
-        setFooterGame((gameData as { Game: string }).Game);
-        refresh();
-      });
-  }, [game, refresh, setFooterGame]);
+  const memoizedWindow = React.useMemo(
+    () => <MileniumWindow {...config} />,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [mode]
+  );
 
   return (
     <div
@@ -168,19 +88,18 @@ export function Features() {
     >
       <WordFadeIn
         className="text-3xl md:text-3xl mb-5"
-        words={`mspaint features:`}
+        words={`lumin.rest features:`}
         inView
       />
 
       <BlurFade inViewMargin="0px" inView>
-        <div className="max-w-[720px] max-h-[600px] scale-[0.8] max-sm:scale-[0.5] md:scale-90 lg:scale-100">
-          {memoizedObsidian}
+        <div className="w-full overflow-x-auto px-4">
+          <div className="mx-auto w-[700px] min-w-[700px] max-w-none">
+            {memoizedWindow}
+          </div>
         </div>
 
-        <GameSelection
-          value={game}
-          setValue={setGame}
-        />
+        <ModeSelection value={mode} setValue={setMode} />
       </BlurFade>
     </div>
   );

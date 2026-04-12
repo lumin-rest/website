@@ -8,21 +8,22 @@ import type { ReactNode } from "react";
 import "./globals.css"
 
 const description =
-  "mspaint is the best premium roblox script hub supporting games such as doors, 3008, room & doors, pressure, fisch, build a boat for treasure, grace and murder mystery 2";
+  "lumin.rest is a premium roblox script hub supporting games such as doors, 3008, room & doors, pressure, fisch, build a boat for treasure, grace and murder mystery 2";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
-    default: "mspaint",
-    template: "%s | mspaint",
+    default: "lumin.rest",
+    template: "%s | lumin.rest",
   },
   description: description,
   openGraph: {
     description: description,
-    images: "https://www.mspaint.cc/icon.png",
+    images: "https://lumin.rest/icon.png",
   },
   keywords: [
-    "mspaint",
+    "lumin.rest",
+    "lumin",
     "roblox",
     "script",
     "best script",
