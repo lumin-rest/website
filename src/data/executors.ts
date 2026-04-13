@@ -1,10 +1,9 @@
 export const executorsList = [
     // Windows
-    "Synapse Z",
+    "Potassium",
     "Seliware",
     "Volt",
     "Wave",
-    "Potassium",
     "Volcano",
     "ChocoSploit",
 

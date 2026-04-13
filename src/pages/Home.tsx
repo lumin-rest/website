@@ -130,8 +130,8 @@ export default function Home() {
 
             <div className="flex flex-row items-center justify-center mt-5 gap-8 max-md:flex-col">
               <Executor
-                name="Synapse Z"
-                image="https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAstrcP1OfyiFW9CYJnxZHQ6R5wvaPXUIVc0Orp"
+                name="Potassium"
+                image="https://github.com/user-attachments/assets/e69883e2-2b73-4c72-89a1-1f5ee29525d8"
                 url="#"
               />
               <Executor
