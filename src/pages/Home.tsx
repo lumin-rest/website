@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
 import WordFadeIn from "@/components/ui/word-fade-in";
+import WordRotate from "@/components/ui/word-rotate";
 import GameCard from "@/components/game-card";
 import { Input } from "@/components/ui/input";
 import CopyButton from "@/components/copy-button";
@@ -13,6 +14,27 @@ import Executor from "@/components/executor";
 import { Features } from "@/components/features";
 import BuyMspaintButton from "@/components/buy-mspaint";
 import { UIStateProvider } from "@/components/obsidian/providers/UIStateProvider";
+
+const supportedGames = [
+  {
+    title: "Grace",
+    mappingName: "Grace - Grace",
+    image:
+      "https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAs57LO68MxTny6kRILmGKFZcwpAtJ8zEgP1fNh",
+    placeId: 138837502355157,
+  },
+  {
+    title: "Build A Boat For Treasure",
+    mappingName: "Build A Boat For Treasure - Build A Boat For Treasure",
+    image:
+      "https://tr.rbxcdn.com/180DAY-57ac7b7b654e95f6b13697227f85d1ae/768/432/Image/Webp/noFilter",
+    placeId: 537413528,
+  },
+];
+
+const supportedGameHeadings = supportedGames.map(
+  ({ title }) => `lumin.rest supports ${title}`,
+);
 
 export default function Home() {
   const gamesStatusData: Record<string, string> = {};
@@ -160,15 +182,15 @@ export default function Home() {
             id="games"
             className="flex flex-col items-center mb-[10vh] text-center overflow-hidden relative"
           >
-            <WordFadeIn
-              className="text-3xl md:text-3xl"
-              words="lumin.rest supports Grace and Build A Boat For Treasure"
-              inView
+            <WordRotate
+              className="font-display text-center text-3xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-3xl md:leading-[5rem]"
+              words={supportedGameHeadings}
+              duration={3000}
             />
             <BlurFade className="mb-[15px]" delay={0.2 + 1 * 0.05} inView>
               <WordFadeIn
                 className="text-xl md:text-xl font-normal"
-                words="quality gameplay enhancements"
+                words="quality and quantity"
                 inView
                 initialDelay={0.15 * 6}
                 delay={0.35}
@@ -180,20 +202,16 @@ export default function Home() {
               delay={0.2 + 2 * 0.05}
               inView
             >
-              <GameCard
-                title="Grace"
-                mappingName="Grace - Grace"
-                image="https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAs57LO68MxTny6kRILmGKFZcwpAtJ8zEgP1fNh"
-                placeId={138837502355157}
-                gamesStatusData={gamesStatusData}
-              />
-              <GameCard
-                title="Build A Boat For Treasure"
-                mappingName="Build A Boat For Treasure - Build A Boat For Treasure"
-                image="https://tr.rbxcdn.com/180DAY-57ac7b7b654e95f6b13697227f85d1ae/768/432/Image/Webp/noFilter"
-                placeId={537413528}
-                gamesStatusData={gamesStatusData}
-              />
+              {supportedGames.map((game) => (
+                <GameCard
+                  key={game.mappingName}
+                  title={game.title}
+                  mappingName={game.mappingName}
+                  image={game.image}
+                  placeId={game.placeId}
+                  gamesStatusData={gamesStatusData}
+                />
+              ))}
             </BlurFade>
           </div>
 
