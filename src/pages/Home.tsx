@@ -30,6 +30,13 @@ const supportedGames = [
       "https://tr.rbxcdn.com/180DAY-57ac7b7b654e95f6b13697227f85d1ae/768/432/Image/Webp/noFilter",
     placeId: 537413528,
   },
+  {
+    title: "ZOO or OOF",
+    mappingName: "ZOO or OOF - ZOO or OOF",
+    image:
+      "https://tr.rbxcdn.com/180DAY-a7ad21f8f985d73a97aef8795f2def30/768/432/Image/Webp/noFilter",
+    placeId: 139233844569220,
+  },
 ];
 
 const supportedGameHeadings = supportedGames.map(

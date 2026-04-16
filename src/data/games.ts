@@ -5,6 +5,7 @@ export const gamesList = [
   // "Pressure",
   "Fisch",
   "Build A Boat For Treasure",
+  "ZOO or OOF",
   "Grace",
   "Murder Mystery 2",
   "Word Bomb",
