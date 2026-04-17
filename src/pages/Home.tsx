@@ -14,8 +14,17 @@ import Executor from "@/components/executor";
 import { Features } from "@/components/features";
 import BuyMspaintButton from "@/components/buy-mspaint";
 import { UIStateProvider } from "@/components/obsidian/providers/UIStateProvider";
+import { gamesList } from "@/data/games";
 
 const supportedGames = [
+  {
+    title: "Tower of Hell",
+    mappingName: "Tower of Hell",
+    image:
+      "https://tr.rbxcdn.com/180DAY-20a372111085c33de1e64004e4dca1d8/768/432/Image/Webp/noFilter",
+    placeId: 1962086868,
+    url: "https://www.roblox.com/games/1962086868/Tower-of-Hell",
+  },
   {
     title: "Grace",
     mappingName: "Grace - Grace",
@@ -110,11 +119,10 @@ export default function Home() {
           </BlurFade>
 
           <BlurFade delay={0.2 + 3 * 0.05}>
-            <p className="text-2xl text-center text-muted-foreground mb-6">
-              The best{" "}
-              <span className="font-bold text-white">Grace</span>{" "}
-              script
-            </p>
+            <div className="text-2xl flex flex-row justify-center items-center  gap-2">
+              <span className="font-bold">The best</span>{" "}
+              <WordRotate duration={2500} words={gamesList} /> script
+            </div>
           </BlurFade>
 
           <BlurFade delay={0.2 + 4 * 0.05}>
@@ -223,6 +231,7 @@ export default function Home() {
                   mappingName={game.mappingName}
                   image={game.image}
                   placeId={game.placeId}
+                  url={game.url}
                   gamesStatusData={gamesStatusData}
                 />
               ))}

@@ -26,10 +26,11 @@ export default function GameCard({
   mappingName,
   image,
   placeId,
+  url,
   status,
   issues,
   gamesStatusData
-}: { title: string, mappingName: string, image: string, placeId: number | undefined, status?: boolean, issues?: boolean, gamesStatusData: { [key: string]: string } }) {
+}: { title: string, mappingName: string, image: string, placeId: number | undefined, url?: string, status?: boolean, issues?: boolean, gamesStatusData: { [key: string]: string } }) {
   const uiState = useUIState();
 
   // handle icon //
@@ -83,7 +84,7 @@ export default function GameCard({
           <a
             className="text-ls font-semibold transition-all duration-300 underline decoration-transparent hover:decoration-white"
             target="_blank"
-            href={`https://roblox.com/games/${placeId}/${title}`}
+            href={url ?? `https://roblox.com/games/${placeId}/${title}`}
           >
             {title}
           </a>
