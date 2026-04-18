@@ -2,6 +2,7 @@ import type { MileniumConfig } from "@/components/milenium/MileniumWindow";
 import { NINETY_NIGHTS_DATASETS } from "@/data/99nightsintheforest";
 import { BABFT_DATASETS } from "@/data/babft";
 import { GRACE_DATASETS } from "@/data/grace";
+import { GROW_A_GARDEN_DATASETS } from "@/data/growagarden";
 import { MM2_DATASETS } from "@/data/mm2";
 import { TOWER_OF_HELL_DATASETS } from "@/data/towerofhell";
 import { ZOO_OR_OOF_DATASETS } from "@/data/zoooroof";
@@ -26,6 +27,10 @@ export const MILENIUM_PREVIEW_DATASETS: Record<
   "Build A Boat For Treasure": {
     defaultMode: "Main",
     datasets: BABFT_DATASETS,
+  },
+  "Grow a Garden": {
+    defaultMode: "Main",
+    datasets: GROW_A_GARDEN_DATASETS,
   },
   "99 Nights In The Forest": {
     defaultMode: "Main",

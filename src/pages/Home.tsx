@@ -33,6 +33,14 @@ const supportedGames = [
     placeId: 138837502355157,
   },
   {
+    title: "Grow a Garden",
+    mappingName: "Grow a Garden - Main",
+    image:
+      "https://tr.rbxcdn.com/180DAY-968d85784ab26d3f13e1b6143b50468b/768/432/Image/Webp/noFilter",
+    placeId: 126884695634066,
+    url: "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
+  },
+  {
     title: "99 Nights In The Forest",
     mappingName: "99 Nights In The Forest - Main",
     image:
@@ -228,7 +236,7 @@ export default function Home() {
             </BlurFade>
 
             <BlurFade
-              className="flex flex-row items-center justify-center mt-5 gap-3 max-md:flex-col flex-wrap px-10"
+              className="mt-5 grid w-full max-w-[1600px] grid-cols-1 justify-items-center gap-3 px-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
               delay={0.2 + 2 * 0.05}
               inView
             >

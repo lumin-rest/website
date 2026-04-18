@@ -175,6 +175,11 @@ export const MenuMapping = {
     DataURL: GetUIDataURL("deadrails"),
   }),
 
+  ...SetupGameMapping("Grow a Garden", {
+    Game: "Grow a Garden [BETA]",
+    DataURL: GetUIDataURL("growagarden"),
+  }),
+
   ...SetupGameMapping("99 Nights In The Forest", {
     Game: "99 Nights In The Forest [BETA]",
     DataURL: GetUIDataURL("99nightsintheforest"),
