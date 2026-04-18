@@ -1,17 +1,8 @@
 export const gamesList = [
   "Tower of Hell",
-  //"DOORS",
-  //"3008",
-  //"Rooms & Doors",
-  // "Pressure",
-  //"Fisch",
+  "99 Nights In The Forest",
   "Build A Boat For Treasure",
   "ZOO or OOF",
   "Grace",
   "Murder Mystery 2",
-  //"Word Bomb",
-  //"Notoriety",
-  //"Dead Rails",
-  //"99 Nights In The Forest",
-  //"The Forge",
 ];

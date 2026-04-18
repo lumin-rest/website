@@ -1,4 +1,5 @@
 import type { MileniumConfig } from "@/components/milenium/MileniumWindow";
+import { NINETY_NIGHTS_DATASETS } from "@/data/99nightsintheforest";
 import { BABFT_DATASETS } from "@/data/babft";
 import { GRACE_DATASETS } from "@/data/grace";
 import { MM2_DATASETS } from "@/data/mm2";
@@ -25,6 +26,10 @@ export const MILENIUM_PREVIEW_DATASETS: Record<
   "Build A Boat For Treasure": {
     defaultMode: "Main",
     datasets: BABFT_DATASETS,
+  },
+  "99 Nights In The Forest": {
+    defaultMode: "Main",
+    datasets: NINETY_NIGHTS_DATASETS,
   },
   "Murder Mystery 2": {
     defaultMode: "Standard",

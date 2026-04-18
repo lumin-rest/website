@@ -33,6 +33,14 @@ const supportedGames = [
     placeId: 138837502355157,
   },
   {
+    title: "99 Nights In The Forest",
+    mappingName: "99 Nights In The Forest - Main",
+    image:
+      "https://tr.rbxcdn.com/180DAY-643b9b9285f3bd9b63cf392db12a4d87/768/432/Image/Webp/noFilter",
+    placeId: 79546208627805,
+    url: "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
+  },
+  {
     title: "Build A Boat For Treasure",
     mappingName: "Build A Boat For Treasure - Build A Boat For Treasure",
     image:
