@@ -33,7 +33,7 @@ const supportedGames = [
     title: "Bite By Night",
     mappingName: "Bite By Night",
     image:
-      "https://www.roblox.com/asset-thumbnail/image?assetId=70845479499574&width=768&height=432&format=png",
+      "https://tr.rbxcdn.com/180DAY-b8425341c9cabc4e7415a5b7d0df534c/768/432/Image/Webp/noFilter",
     placeId: 70845479499574,
     url: "https://www.roblox.com/games/70845479499574/Bite-By-Night",
   },

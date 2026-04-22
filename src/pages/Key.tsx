@@ -98,7 +98,7 @@ export default function Key() {
                     <Perk>Early access to new features</Perk>
                   </ul>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="flex-col gap-2">
                   <a
                     href="https://luminrest.mysellauth.com/product/lifetime"
                     target="_blank"
@@ -106,7 +106,18 @@ export default function Key() {
                     className="w-full"
                   >
                     <Button className="w-full cursor-pointer">
-                      Buy Lifetime
+                      Buy using Crypto
+                      <ExternalLinkIcon className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                  <a
+                    href="https://bloxproducts.com/scripts#LuminRest"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <Button variant="outline" className="w-full cursor-pointer">
+                      Buy on BloxProducts
                       <ExternalLinkIcon className="ml-2 h-4 w-4" />
                     </Button>
                   </a>
