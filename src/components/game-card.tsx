@@ -2,9 +2,6 @@ import React from "react";
 import { Card, CardHeader } from "./ui/card";
 import { CircleMinus, CircleCheck, CircleAlert, BanIcon } from "lucide-react";
 
-import { useUIState } from "./obsidian/providers/UIStateProvider";
-import { MenuMapping } from "@/data/features";
-
 const FadeText = ({ children, width }: { children: React.ReactNode, width: number }) => (
   <div
     style={{
@@ -23,7 +20,6 @@ const FadeText = ({ children, width }: { children: React.ReactNode, width: numbe
 
 export default function GameCard({
   title,
-  mappingName,
   image,
   placeId,
   url,
@@ -31,7 +27,6 @@ export default function GameCard({
   issues,
   gamesStatusData
 }: { title: string, mappingName: string, image: string, placeId: number | undefined, url?: string, status?: boolean, issues?: boolean, gamesStatusData: { [key: string]: string } }) {
-  const uiState = useUIState();
 
   // handle icon //
   let statusEmoji = title in gamesStatusData ? gamesStatusData[title] : "🟢";
@@ -64,19 +59,18 @@ export default function GameCard({
   return (
     <Card className="w-72 bg-zinc-900 text-white overflow-hidden">
       <div className="h-40 w-full overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover cursor-pointer"
-          loading="lazy"
-          onClick={(e) => {
-            e.preventDefault();
-            uiState.setGame(mappingName);
-
-            const el = document.getElementById("features")
-            if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset, behavior: "smooth" });
-          }}
-        />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={url ?? `https://roblox.com/games/${placeId}/${title}`}
+        >
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover cursor-pointer"
+            loading="lazy"
+          />
+        </a>
       </div>
 
       <CardHeader className="p-4 flex flex-row items-center justify-between space-y-0">

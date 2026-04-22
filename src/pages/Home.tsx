@@ -11,10 +11,7 @@ import { Input } from "@/components/ui/input";
 import CopyButton from "@/components/copy-button";
 import { ShinyButton } from "@/components/magicui/shiny-button";
 import Executor from "@/components/executor";
-import { Features } from "@/components/features";
 import BuyMspaintButton from "@/components/buy-mspaint";
-import { UIStateProvider } from "@/components/obsidian/providers/UIStateProvider";
-import { gamesList } from "@/data/games";
 
 const supportedGames = [
   {
@@ -31,6 +28,14 @@ const supportedGames = [
     image:
       "https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAs57LO68MxTny6kRILmGKFZcwpAtJ8zEgP1fNh",
     placeId: 138837502355157,
+  },
+  {
+    title: "Bite By Night",
+    mappingName: "Bite By Night",
+    image:
+      "https://www.roblox.com/asset-thumbnail/image?assetId=70845479499574&width=768&height=432&format=png",
+    placeId: 70845479499574,
+    url: "https://www.roblox.com/games/70845479499574/Bite-By-Night",
   },
   {
     title: "Grow a Garden",
@@ -135,13 +140,6 @@ export default function Home() {
           </BlurFade>
 
           <BlurFade delay={0.2 + 3 * 0.05}>
-            <div className="text-2xl flex flex-row justify-center items-center  gap-2">
-              <span className="font-bold">The best</span>{" "}
-              <WordRotate duration={2500} words={gamesList} /> script
-            </div>
-          </BlurFade>
-
-          <BlurFade delay={0.2 + 4 * 0.05}>
             <div className="flex flex-row items-center justify-center gap-2 flex-wrap max-sm:flex-col max-sm:w-[90vw]">
               <Input
                 type="text"
@@ -182,7 +180,7 @@ export default function Home() {
 
           {/* Executors */}
           <div className="flex flex-col items-center justify-center mt-16">
-            <BlurFade delay={0.2 + 5 * 0.05} inView>
+            <BlurFade delay={0.2 + 4 * 0.05} inView>
               <h1 className="text-2xl font-bold text-center px-5">
                 Supporting your favorite executors
               </h1>
@@ -206,7 +204,7 @@ export default function Home() {
               />
             </div>
 
-            <BlurFade delay={0.2 + 7 * 0.05} inView>
+            <BlurFade delay={0.2 + 6 * 0.05} inView>
               <h4 className="text-muted-foreground text-sm mt-5">
                 And many more...
               </h4>
@@ -215,48 +213,43 @@ export default function Home() {
         </div>
 
         {/* ── Games section ─────────────────────────────────────────── */}
-        <UIStateProvider>
-          <div
-            id="games"
-            className="flex flex-col items-center mb-[10vh] text-center overflow-hidden relative"
-          >
-            <WordRotate
-              className="font-display text-center text-3xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-3xl md:leading-[5rem]"
-              words={supportedGameHeadings}
-              duration={3000}
-            />
-            <BlurFade className="mb-[15px]" delay={0.2 + 1 * 0.05} inView>
-              <WordFadeIn
-                className="text-xl md:text-xl font-normal"
-                words="quality and quantity"
-                inView
-                initialDelay={0.15 * 6}
-                delay={0.35}
-              />
-            </BlurFade>
-
-            <BlurFade
-              className="mt-5 grid w-full max-w-[1600px] grid-cols-1 justify-items-center gap-3 px-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
-              delay={0.2 + 2 * 0.05}
+        <div
+          id="games"
+          className="flex flex-col items-center mb-[10vh] text-center overflow-hidden relative"
+        >
+          <WordRotate
+            className="font-display text-center text-3xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-3xl md:leading-[5rem]"
+            words={supportedGameHeadings}
+            duration={3000}
+          />
+          <BlurFade className="mb-[15px]" delay={0.2 + 1 * 0.05} inView>
+            <WordFadeIn
+              className="text-xl md:text-xl font-normal"
+              words="quality and quantity"
               inView
-            >
-              {supportedGames.map((game) => (
-                <GameCard
-                  key={game.mappingName}
-                  title={game.title}
-                  mappingName={game.mappingName}
-                  image={game.image}
-                  placeId={game.placeId}
-                  url={game.url}
-                  gamesStatusData={gamesStatusData}
-                />
-              ))}
-            </BlurFade>
-          </div>
+              initialDelay={0.15 * 6}
+              delay={0.35}
+            />
+          </BlurFade>
 
-          {/* ── Features / Milenium preview ───────────────────────────── */}
-          <Features />
-        </UIStateProvider>
+          <BlurFade
+            className="mt-5 grid w-full max-w-[1600px] grid-cols-1 justify-items-center gap-3 px-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+            delay={0.2 + 2 * 0.05}
+            inView
+          >
+            {supportedGames.map((game) => (
+              <GameCard
+                key={game.mappingName}
+                title={game.title}
+                mappingName={game.mappingName}
+                image={game.image}
+                placeId={game.placeId}
+                url={game.url}
+                gamesStatusData={gamesStatusData}
+              />
+            ))}
+          </BlurFade>
+        </div>
 
         {/* ── Footer ──────────────────────────────────────────────── */}
         <Separator className="mt-[2.5rem] w-screen" />
