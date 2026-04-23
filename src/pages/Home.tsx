@@ -261,7 +261,15 @@ export default function Home() {
                 <span className="text-[#f8bfd4]">lumin</span>.rest
               </p>
               <p className="text-muted-foreground text-xs">
-                Site made by transicle
+                Forked from{" "}
+                <a
+                  href="https://mspaint.cc"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-2"
+                >
+                  mspaint.cc
+                </a>
               </p>
             </div>
           </div>

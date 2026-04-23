@@ -6,9 +6,6 @@ import "./app/globals.css";
 
 import Home from "./pages/Home";
 import Key from "./pages/Key";
-import Privacy from "./pages/Privacy";
-import TOS from "./pages/TOS";
-import MileniumPreview from "./pages/MileniumPreview";
 
 const routerBaseName = import.meta.env.BASE_URL;
 
@@ -18,9 +15,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/key" element={<Key />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/tos" element={<TOS />} />
-        <Route path="/milenium-preview" element={<MileniumPreview />} />
       </Routes>
       <Toaster richColors />
     </BrowserRouter>
