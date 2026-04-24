@@ -106,10 +106,24 @@ export default function Key() {
                     className="w-full"
                   >
                     <Button className="w-full cursor-pointer">
-                      Buy using Crypto
+                      Buy Officially (Crypto only)
                       <ExternalLinkIcon className="ml-2 h-4 w-4" />
                     </Button>
                   </a>
+                  <a
+                    href="https://lunor.wtf/product/luminrest"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <Button variant="outline" className="w-full cursor-pointer">
+                      Buy on lunor.wtf
+                      <ExternalLinkIcon className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                  <p className="text-xs text-muted-foreground text-center">
+                    lunor.wtf accepts PayPal, Crypto, Debit & Credit Card, Apple Pay, Google Pay, and Venmo
+                  </p>
                 </CardFooter>
               </Card>
             </BlurFade>
