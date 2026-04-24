@@ -110,17 +110,6 @@ export default function Key() {
                       <ExternalLinkIcon className="ml-2 h-4 w-4" />
                     </Button>
                   </a>
-                  <a
-                    href="https://bloxproducts.com/scripts#LuminRest"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
-                  >
-                    <Button variant="outline" className="w-full cursor-pointer">
-                      Buy on BloxProducts
-                      <ExternalLinkIcon className="ml-2 h-4 w-4" />
-                    </Button>
-                  </a>
                 </CardFooter>
               </Card>
             </BlurFade>
