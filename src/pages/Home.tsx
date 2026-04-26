@@ -263,7 +263,7 @@ export default function Home() {
               <p className="text-muted-foreground text-xs">
                 Stolen from{" "}
                 <a
-                  href="https://mspaint.cc"
+                  href="https://thescriptisdogshitmightaswellnotlinktoit.com"
                   target="_blank"
                   rel="noreferrer"
                   className="underline underline-offset-2"
