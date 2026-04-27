@@ -182,17 +182,17 @@ export default function Home() {
               <Executor
                 name="Potassium"
                 image="https://github.com/user-attachments/assets/e69883e2-2b73-4c72-89a1-1f5ee29525d8"
-                url="#"
+                url="https://potassium.pro/"
               />
               <Executor
                 name="Seliware"
                 image="https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAs2M1WsFKsE4uqeKTGPFHJZhdvYVzSAOgb9aty"
-                url="#"
+                url="https://seliware.com/"
               />
               <Executor
                 name="Delta"
                 image="https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAslPmgsgFtT6a830HkYDKeuAh9RwMGsqd24CQZ"
-                url="#"
+                url="https://deltaexploits.gg/"
               />
             </div>
 
