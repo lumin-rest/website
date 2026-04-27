@@ -30,20 +30,12 @@ const supportedGames = [
     placeId: 138837502355157,
   },
   {
-    title: "Bite By Night",
-    mappingName: "Bite By Night",
+    title: "Oil Empire",
+    mappingName: "Oil Empire - Main",
     image:
-      "https://tr.rbxcdn.com/180DAY-b8425341c9cabc4e7415a5b7d0df534c/768/432/Image/Webp/noFilter",
-    placeId: 70845479499574,
-    url: "https://www.roblox.com/games/70845479499574/Bite-By-Night",
-  },
-  {
-    title: "Grow a Garden",
-    mappingName: "Grow a Garden - Main",
-    image:
-      "https://tr.rbxcdn.com/180DAY-968d85784ab26d3f13e1b6143b50468b/768/432/Image/Webp/noFilter",
-    placeId: 126884695634066,
-    url: "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
+      "https://tr.rbxcdn.com/180DAY-bbae5d01bfd9baa2163dd066db794e2c/768/432/Image/Webp/noFilter",
+    placeId: 107095834793267,
+    url: "https://www.roblox.com/games/107095834793267/Oil-Empire",
   },
   {
     title: "99 Nights In The Forest",
