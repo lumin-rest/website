@@ -106,7 +106,7 @@ export default function Key() {
                     className="w-full"
                   >
                     <Button className="w-full cursor-pointer">
-                      Buy Officially (Crypto only)
+                      Buy Officially
                       <ExternalLinkIcon className="ml-2 h-4 w-4" />
                     </Button>
                   </a>
