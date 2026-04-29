@@ -13,7 +13,17 @@ import { ShinyButton } from "@/components/magicui/shiny-button";
 import Executor from "@/components/executor";
 import BuyMspaintButton from "@/components/buy-mspaint";
 
-const supportedGames = [
+type SupportedGame = {
+  title: string;
+  mappingName: string;
+  image: string;
+  placeId: number;
+  url?: string;
+  rscriptsUrl?: string;
+  scriptbloxUrl?: string;
+};
+
+const supportedGames: SupportedGame[] = [
   {
     title: "Tower of Hell",
     mappingName: "Tower of Hell",
@@ -21,6 +31,8 @@ const supportedGames = [
       "https://tr.rbxcdn.com/180DAY-20a372111085c33de1e64004e4dca1d8/768/432/Image/Webp/noFilter",
     placeId: 1962086868,
     url: "https://www.roblox.com/games/1962086868/Tower-of-Hell",
+    rscriptsUrl: "https://rscripts.net/script/20-features-or-fling-skin-changer-autofarm-and-more-pVMn",
+    scriptbloxUrl: "https://scriptblox.com/script/Tower-of-Hell-Starry-OP-BEST-Script-Hub-17868",
   },
   {
     title: "Grace",
@@ -28,6 +40,8 @@ const supportedGames = [
     image:
       "https://q2p0njok3b.ufs.sh/f/Z155p1jPvLAs57LO68MxTny6kRILmGKFZcwpAtJ8zEgP1fNh",
     placeId: 138837502355157,
+    rscriptsUrl: "https://rscripts.net/script/139-features-or-infinite-exp-disabler-item-and-trait-spawner-CreB",
+    scriptbloxUrl: "https://scriptblox.com/script/Grace-GRACE-BUT-EVIL-145-features-Infinite-EXP-Disabler-Item-and-Trait-S*er-207294",
   },
   {
     title: "Oil Empire",
@@ -36,6 +50,7 @@ const supportedGames = [
       "https://tr.rbxcdn.com/180DAY-bbae5d01bfd9baa2163dd066db794e2c/768/432/Image/Webp/noFilter",
     placeId: 107095834793267,
     url: "https://www.roblox.com/games/107095834793267/Oil-Empire",
+    rscriptsUrl: "https://rscripts.net/script/25-features-or-auto-expand-auto-drill-and-refinery-and-more-gZyu",
   },
   {
     title: "99 Nights In The Forest",
@@ -44,12 +59,15 @@ const supportedGames = [
       "https://tr.rbxcdn.com/180DAY-643b9b9285f3bd9b63cf392db12a4d87/768/432/Image/Webp/noFilter",
     placeId: 79546208627805,
     url: "https://www.roblox.com/games/79546208627805/99-Nights-in-the-Forest",
+    rscriptsUrl: "https://rscripts.net/script/20-features-or-godmode-bring-all-items-grab-kids-and-more-MqMZ",
   },
   {
     title: "Build A Boat For Treasure",
     mappingName: "Build A Boat For Treasure - Build A Boat For Treasure",
     image:
       "https://tr.rbxcdn.com/180DAY-57ac7b7b654e95f6b13697227f85d1ae/768/432/Image/Webp/noFilter",
+    rscriptsUrl: "https://rscripts.net/script/op-new-best-script-auto-build-auto-farm-auto-quest-and-more-f5jg",
+    scriptbloxUrl: "https://scriptblox.com/script/Build-A-Boat-For-Treasure-OP-NEW-Best-Script-Auto-Build-Auto-Farm-Auto-Quest-and-more-205399",
     placeId: 537413528,
   },
   {
@@ -57,7 +75,9 @@ const supportedGames = [
     mappingName: "ZOO or OOF - ZOO or OOF",
     image:
       "https://tr.rbxcdn.com/180DAY-a7ad21f8f985d73a97aef8795f2def30/768/432/Image/Webp/noFilter",
+    rscriptsUrl: "https://rscripts.net/script/15-features-or-rapid-fire-kill-all-infinite-ult-and-more-uqDJ",
     placeId: 139233844569220,
+    scriptbloxUrl: "https://scriptblox.com/script/ZOO-or-OOF-Lumin-NEW-OP-BEST-Script-Hub-202071",
   },
   {
     title: "Murder Mystery 2",
@@ -65,6 +85,8 @@ const supportedGames = [
     image:
       "https://tr.rbxcdn.com/180DAY-fe7335c3ad752e84323cd81ae38de69a/768/432/Image/Webp/noFilter",
     placeId: 142823291,
+    rscriptsUrl: "https://rscripts.net/script/66-features-or-coin-farm-silent-aim-and-predictor-and-more-l24T",
+    scriptbloxUrl: "https://scriptblox.com/script/Murder-Mystery-2-NEW-Starry-OP-Best-Script-Hub-17868",
   },
   {
     title: "RIVALS",
@@ -72,6 +94,7 @@ const supportedGames = [
     image:
       "https://tr.rbxcdn.com/180DAY-c66296c3f8c6e16eb6f6eecca67c4710/768/432/Image/Webp/noFilter",
     placeId: 17625359962,
+    rscriptsUrl: "https://rscripts.net/script/1-skin-changer-and-spoofer-or-yabujin-free-or-op-new-2026-TipP",
   },
 ];
 
@@ -244,6 +267,8 @@ export default function Home() {
                 image={game.image}
                 placeId={game.placeId}
                 url={game.url}
+                rscriptsUrl={game.rscriptsUrl}
+                scriptbloxUrl={game.scriptbloxUrl}
                 gamesStatusData={gamesStatusData}
               />
             ))}
@@ -262,7 +287,7 @@ export default function Home() {
               <p className="text-muted-foreground text-xs">
                 Stolen from{" "}
                 <a
-                  href="https://thescriptisdogshitmightaswellnotlinktoit.com"
+                  href="https://rscripts.net/@luminrest"
                   target="_blank"
                   rel="noreferrer"
                   className="underline underline-offset-2"

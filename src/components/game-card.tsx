@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, CardHeader } from "./ui/card";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader } from "./ui/card";
 import { CircleMinus, CircleCheck, CircleAlert, BanIcon } from "lucide-react";
 
 const FadeText = ({ children, width }: { children: React.ReactNode, width: number }) => (
@@ -18,15 +19,34 @@ const FadeText = ({ children, width }: { children: React.ReactNode, width: numbe
   </div>
 );
 
+type GameCardProps = {
+  title: string;
+  mappingName: string;
+  image: string;
+  placeId?: number;
+  url?: string;
+  rscriptsUrl?: string;
+  scriptbloxUrl?: string;
+  status?: boolean;
+  issues?: boolean;
+  gamesStatusData: Record<string, string>;
+};
+
 export default function GameCard({
   title,
   image,
   placeId,
   url,
+  rscriptsUrl,
+  scriptbloxUrl,
   status,
   issues,
   gamesStatusData
-}: { title: string, mappingName: string, image: string, placeId: number | undefined, url?: string, status?: boolean, issues?: boolean, gamesStatusData: { [key: string]: string } }) {
+}: GameCardProps) {
+  const resourceLinks = [
+    rscriptsUrl ? { label: "Rscripts", href: rscriptsUrl } : null,
+    scriptbloxUrl ? { label: "Scriptblox", href: scriptbloxUrl } : null,
+  ].filter((link): link is { label: string; href: string } => link !== null);
 
   // handle icon //
   let statusEmoji = title in gamesStatusData ? gamesStatusData[title] : "🟢";
@@ -86,6 +106,24 @@ export default function GameCard({
 
         {statusIcon}
       </CardHeader>
+
+      {resourceLinks.length > 0 ? (
+        <CardContent className="flex gap-2 p-4 pt-0">
+          {resourceLinks.map((link) => (
+            <Button
+              key={link.label}
+              asChild
+              size="sm"
+              variant="outline"
+              className="h-8 flex-1 border-zinc-700 bg-zinc-800 text-zinc-100 hover:bg-zinc-700 hover:text-white"
+            >
+              <a href={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            </Button>
+          ))}
+        </CardContent>
+      ) : null}
     </Card>
   );
 }
