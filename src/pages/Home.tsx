@@ -66,6 +66,13 @@ const supportedGames = [
       "https://tr.rbxcdn.com/180DAY-fe7335c3ad752e84323cd81ae38de69a/768/432/Image/Webp/noFilter",
     placeId: 142823291,
   },
+  {
+    title: "RIVALS",
+    mappingName: "RIVALS - Main",
+    image:
+      "https://tr.rbxcdn.com/180DAY-c66296c3f8c6e16eb6f6eecca67c4710/768/432/Image/Webp/noFilter",
+    placeId: 17625359962,
+  },
 ];
 
 const supportedGameHeadings = supportedGames.map(

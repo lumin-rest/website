@@ -6,4 +6,5 @@ export const gamesList = [
   "ZOO or OOF",
   "Grace",
   "Murder Mystery 2",
+  "RIVALS",
 ];
