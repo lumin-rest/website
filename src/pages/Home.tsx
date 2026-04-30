@@ -67,7 +67,7 @@ const supportedGames: SupportedGame[] = [
     mappingName: "Build A Boat For Treasure - Build A Boat For Treasure",
     image:
       "https://tr.rbxcdn.com/180DAY-57ac7b7b654e95f6b13697227f85d1ae/768/432/Image/Webp/noFilter",
-    rscriptsUrl: "https://rscripts.net/script/op-new-best-script-auto-build-auto-farm-auto-quest-and-more-f5jg",
+    rscriptsUrl: "https://rscripts.net/script/op-new-best-babft-or-auto-build-auto-farm-auto-quest-and-more-YHMT",
     scriptbloxUrl: "https://scriptblox.com/script/Build-A-Boat-For-Treasure-OP-NEW-Best-Script-Auto-Build-Auto-Farm-Auto-Quest-and-more-205399",
     placeId: 537413528,
   },
