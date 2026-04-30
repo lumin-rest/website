@@ -5,6 +5,15 @@ const buildDir = path.resolve("build");
 const indexPath = path.join(buildDir, "index.html");
 
 const routeMeta = {
+  home: {
+    title: "lumin.rest - Premium Roblox Script Hub",
+    description:
+      "lumin.rest is a premium Roblox script hub supporting Grace, Build a Boat for Treasure, Murder Mystery 2, and more.",
+    keywords:
+      "lumin.rest, lumin, roblox, script hub, best roblox script, working roblox script 2025, tower of hell script, grace script, build a boat script, murder mystery 2 script, rivals script",
+    url: "https://lumin.rest/",
+    image: "https://lumin.rest/icon.png",
+  },
   key: {
     title: "Get Your Key - lumin.rest",
     description:
@@ -59,13 +68,18 @@ function injectMeta(html, { title, description, keywords, url, image }) {
 async function main() {
   const indexHtml = await fs.readFile(indexPath, "utf8");
 
+  // Patch root index.html with home page meta
+  await fs.writeFile(indexPath, injectMeta(indexHtml, routeMeta.home));
+
+  const { home: _home, ...subRoutes } = routeMeta;
+
   await Promise.all([
     ...defaultRoutes.map(async (route) => {
       const routeDir = path.join(buildDir, route);
       await fs.mkdir(routeDir, { recursive: true });
-      await fs.writeFile(path.join(routeDir, "index.html"), indexHtml);
+      await fs.writeFile(path.join(routeDir, "index.html"), injectMeta(indexHtml, routeMeta.home));
     }),
-    ...Object.entries(routeMeta).map(async ([route, meta]) => {
+    ...Object.entries(subRoutes).map(async ([route, meta]) => {
       const routeDir = path.join(buildDir, route);
       await fs.mkdir(routeDir, { recursive: true });
       await fs.writeFile(
