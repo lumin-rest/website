@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { Separator } from "@/components/ui/separator";
@@ -107,6 +108,29 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>lumin.rest - Premium Roblox Script Hub</title>
+        <meta name="description" content="lumin.rest is a premium Roblox script hub supporting Grace, Build a Boat for Treasure, Murder Mystery 2, and more." />
+        <meta name="keywords" content="lumin.rest, lumin, roblox, script hub, best roblox script, working roblox script 2025, tower of hell script, tower of hell lumin, grace script, grace roblox script, oil empire script, oil empire roblox script, 99 nights in the forest script, 99 nights in the forest roblox, build a boat for treasure script, build a boat script, zoo or oof script, zoo or oof roblox, murder mystery 2 script, mm2 script, rivals script, rivals roblox script, op, new, best, 2026, fe, toh script, mm2" />
+        <meta name="author" content="lumin.rest" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#f8bfd4" />
+        <link rel="canonical" href="https://lumin.rest/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://lumin.rest/" />
+        <meta property="og:site_name" content="lumin.rest" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:title" content="lumin.rest - Premium Roblox Script Hub" />
+        <meta property="og:description" content="lumin.rest is a premium Roblox script hub supporting Grace, Build a Boat for Treasure, Murder Mystery 2, and more." />
+        <meta property="og:image" content="https://lumin.rest/icon.png" />
+        <meta property="og:image:alt" content="lumin.rest logo" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://lumin.rest/" />
+        <meta name="twitter:title" content="lumin.rest - Premium Roblox Script Hub" />
+        <meta name="twitter:description" content="lumin.rest is a premium Roblox script hub supporting Grace, Build a Boat for Treasure, Murder Mystery 2, and more." />
+        <meta name="twitter:image" content="https://lumin.rest/icon.png" />
+        <meta name="twitter:image:alt" content="lumin.rest logo" />
+      </Helmet>
       <Navbar className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <NavbarBrand>
           <span className="font-bold text-[#f8bfd4]">lumin</span>
@@ -116,7 +140,7 @@ export default function Home() {
         <NavbarContent justify="end" className="mt-4 mb-4">
           <NavbarItem>
             <Link
-              to="/key"
+              to="/key/"
               className="relative text-foreground transition-colors hover:text-[#f8bfd4] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#f8bfd4] after:transition-all hover:after:w-full"
             >
               Key System
@@ -141,7 +165,7 @@ export default function Home() {
         {/* ── Hero section ─────────────────────────────────────────── */}
         <div className="min-h-[75vh] flex flex-col items-center justify-center pt-24 pb-16 px-4">
           <BlurFade delay={0.2 + 1 * 0.05}>
-            <Link to="/key">
+            <Link to="/key/">
               <div className="flex mb-4">
                 <div
                   className={cn(

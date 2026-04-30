@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,29 @@ function Perk({ children }: { children: React.ReactNode }) {
 export default function Key() {
   return (
     <main className="overflow-x-hidden">
+      <Helmet>
+        <title>Get Your Key - lumin.rest</title>
+        <meta name="description" content="Get free or premium access to lumin.rest, a premium Roblox script hub with support for Grace, Build a Boat for Treasure, Murder Mystery 2, and more." />
+        <meta name="keywords" content="lumin.rest key, lumin key system, roblox script key, free roblox script access, lumin premium" />
+        <meta name="author" content="lumin.rest" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#f8bfd4" />
+        <link rel="canonical" href="https://lumin.rest/key/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://lumin.rest/key/" />
+        <meta property="og:site_name" content="lumin.rest" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:title" content="Get Your Key - lumin.rest" />
+        <meta property="og:description" content="Get free or premium access to lumin.rest, a premium Roblox script hub with support for Grace, Build a Boat for Treasure, Murder Mystery 2, and more." />
+        <meta property="og:image" content="https://lumin.rest/icon.png" />
+        <meta property="og:image:alt" content="lumin.rest logo" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://lumin.rest/key/" />
+        <meta name="twitter:title" content="Get Your Key - lumin.rest" />
+        <meta name="twitter:description" content="Get free or premium access to lumin.rest, a premium Roblox script hub with support for Grace, Build a Boat for Treasure, Murder Mystery 2, and more." />
+        <meta name="twitter:image" content="https://lumin.rest/icon.png" />
+        <meta name="twitter:image:alt" content="lumin.rest logo" />
+      </Helmet>
       <DotPattern
         width={20}
         height={20}

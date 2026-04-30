@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
+import { HelmetProvider } from "react-helmet-async";
 import "./app/globals.css";
 
 import Home from "./pages/Home";
@@ -11,13 +12,15 @@ const routerBaseName = import.meta.env.BASE_URL;
 
 function App() {
   return (
-    <BrowserRouter basename={routerBaseName}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/key" element={<Key />} />
-      </Routes>
-      <Toaster richColors />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter basename={routerBaseName}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/key/" element={<Key />} />
+        </Routes>
+        <Toaster richColors />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 
