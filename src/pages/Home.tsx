@@ -192,12 +192,12 @@ export default function Home() {
                 className="overflow-hidden text-ellipsis min-w-[300px] max-sm:min-w-0 max-sm:w-full border-[#f8bfd4]/20 focus-visible:ring-[#f8bfd4]/50"
                 readOnly
                 value={
-                  'loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/1e8ed553780d0658105a816d5a17b100.lua"))()'
+                  'loadstring(game:HttpGet("https://lumin.rest/script"))()'
                 }
               />
               <CopyButton
                 text={
-                  'loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/1e8ed553780d0658105a816d5a17b100.lua"))()'
+                  'loadstring(game:HttpGet("https://lumin.rest/script"))()'
                 }
               />
 
